@@ -1,0 +1,662 @@
+/* External styling from: https://codepen.io/manikoth/pen/NNNBYe.css
+ */
+body {
+  background-color: #FFF;
+  transition: background-color .2s;
+}
+
+/* Doodle Stage */
+#stage {
+  /* Fixed sizes, not responsive */
+  height: 500px;
+  width: 800px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  background-color: transparent;
+}
+
+.doodle {
+  display: inline-block;
+  position: relative;
+  width: 800px;
+  height: 432px;
+  margin-top: 20px;
+}
+
+.sill {
+  position: absolute;
+  width: 800px;
+  height: 150px;
+  background-color: #FFF;
+  bottom: -80px;
+  left: 0;
+  transition: .2s;
+}
+
+.sill_night {
+  background-color: #000111;
+}
+
+.night {
+  background-color: #223;
+  transition: .2s;
+}
+
+img {
+  position: absolute;
+  top: 0;
+  left: 130px;
+  height: 325px;
+}
+
+/* svgs */
+svg {
+  position: absolute;
+  bottom: 70px;
+}
+
+#G {
+  left: 0px;
+}
+
+#o {
+  left: 205px;
+}
+
+#teapot {
+  left: 325px;
+}
+
+#cat {
+  bottom: -43px;
+  left: 385px;
+}
+
+#l {
+  bottom: 65px;
+  left: 612px;
+}
+
+#e {
+  left: 645px;
+}
+
+#Steam {
+  position: absolute;
+  top: 90px;
+  left: 317px;
+}
+
+#light {
+  top: -50px;
+  right: 100px;
+  transition: .5s;
+}
+
+#window_back {
+  top: 0;
+  left: 130px;
+}
+
+.window_front {
+  top: 0;
+  left: 397px;
+  transition: left 2s;
+}
+
+.window_open {
+  top: 0;
+  left: 170px;
+  transition: left 2s;
+}
+
+#lights {
+  top: 44px;
+  left: 130px;
+  fill: #fff;
+  display: none;
+  width: 538px;
+  transition: all 2s;
+}
+
+.lights {
+  top: 44px;
+  left: 130px;
+  fill: #fff;
+  display: none;
+  width: 538px;
+  transition: all 2s;
+}
+
+#Lights > :not(marquee) {
+  transition: all 2s;
+}
+
+.lights_on {
+  top: 44px;
+  left: 130px;
+  fill: #fff;
+  display: block;
+  width: 538px;
+  transition: all 2s;
+}
+
+.city_off {
+  display: none;
+  transition: all 2s;
+}
+
+/* Colors */
+.blue_highlight {
+  fill: #629cf9;
+}
+
+.blue_dark {
+  fill: #3773bc;
+}
+
+.blue_v_dark {
+  fill: #26619b;
+}
+
+.blue_reg {
+  fill: #5287ec;
+}
+
+.blue_tail {
+  fill: #629cf9;
+}
+
+.red_highlight {
+  fill: #db7286;
+}
+
+.red_dark {
+  fill: #af3a31;
+}
+
+.red_v_dark {
+  fill: #a02d27;
+}
+
+.red_reg {
+  fill: #d8503f;
+}
+
+.yellow_highlight {
+  fill: #e8cb52;
+}
+
+.yellow_v_dark {
+  fill: #cc9132;
+}
+
+.yellow_dark {
+  fill: #d69a3a;
+}
+
+.yellow_reg {
+  fill: #f2bd42;
+}
+
+.green_highlight {
+  fill: #70ba93;
+}
+
+.green_dark {
+  fill: #419343;
+}
+
+.green_v_dark {
+  fill: #378237;
+}
+
+.green_reg {
+  fill: #58a55c;
+}
+
+.window_dark {
+  fill: #f4ece9;
+}
+
+.window_light {
+  fill: #f9f1ef;
+}
+
+.window_dark_night {
+  fill: #47475e;
+}
+
+.window_light_night {
+  fill: #61617c;
+}
+
+.window_glass {
+  opacity: 0.2;
+  fill: #fffbee;
+}
+
+.window_glass_night {
+  fill: #3d3d59;
+}
+
+.steam, .steam2 {
+  fill: none;
+  stroke: #ddd;
+  opacity: 0.3;
+  stroke-linecap: round;
+  stroke-miterlimit: 10;
+  stroke-width: 7px;
+}
+
+.steam2 {
+  stroke-width: 5px;
+}
+
+.shadow {
+  fill: #000111;
+}
+
+.none {
+  fill: #0000;
+  stroke: none;
+}
+
+svg path {
+  transition: fill .2s;
+}
+
+/* Steam animation */
+.block-top, .block-bottom {
+  position: absolute;
+  background-color: #FFF;
+  width: 30px;
+  height: 190px;
+  box-shadow: 0 0 30px 40px #FFFF;
+  top: 40px;
+  left: 35px;
+  transition: .2s;
+}
+
+.block-bottom {
+  top: 330px;
+}
+
+.block-night {
+  background-color: #223;
+  box-shadow: 0 0 30px 40px #223F;
+  transition: .2s;
+}
+
+/* Steam anim */
+.steam, .steam2 {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 1000;
+  -webkit-animation: steamAnim 12s infinite linear;
+          animation: steamAnim 12s infinite linear;
+}
+
+@-webkit-keyframes steamAnim {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes steamAnim {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+/* Teapot animation */
+.bounce {
+  -webkit-animation: bounce 1s;
+          animation: bounce 1s;
+}
+
+/* Lights twinkle animation */
+.lights1 {
+  -webkit-animation: twinkle 4s alternate infinite;
+          animation: twinkle 4s alternate infinite;
+  -webkit-animation-delay: -1.75s;
+          animation-delay: -1.75s;
+}
+
+.lights2 {
+  -webkit-animation: twinkle 4s alternate infinite;
+          animation: twinkle 4s alternate infinite;
+  -webkit-animation-delay: -1.5s;
+          animation-delay: -1.5s;
+}
+
+.lights3 {
+  -webkit-animation: twinkle 4s alternate infinite;
+          animation: twinkle 4s alternate infinite;
+  -webkit-animation-delay: -1.25s;
+          animation-delay: -1.25s;
+}
+
+.lights4 {
+  -webkit-animation: twinkle 4s alternate infinite;
+          animation: twinkle 4s alternate infinite;
+  -webkit-animation-delay: -1s;
+          animation-delay: -1s;
+}
+
+.lights5 {
+  -webkit-animation: twinkle 4s alternate infinite;
+          animation: twinkle 4s alternate infinite;
+  -webkit-animation-delay: -0.75s;
+          animation-delay: -0.75s;
+}
+
+.lights6 {
+  -webkit-animation: twinkle 4s alternate infinite;
+          animation: twinkle 4s alternate infinite;
+  -webkit-animation-delay: -0.5s;
+          animation-delay: -0.5s;
+}
+
+.lights7 {
+  -webkit-animation: twinkle 4s alternate infinite;
+          animation: twinkle 4s alternate infinite;
+  -webkit-animation-delay: -0.25s;
+          animation-delay: -0.25s;
+}
+
+.lights8 {
+  -webkit-animation: twinkle 4s alternate infinite;
+          animation: twinkle 4s alternate infinite;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+
+.lights9 {
+  -webkit-animation: twinkle 4s alternate infinite;
+          animation: twinkle 4s alternate infinite;
+  -webkit-animation-delay: 0.25s;
+          animation-delay: 0.25s;
+}
+
+.lights10 {
+  -webkit-animation: twinkle 4s alternate infinite;
+          animation: twinkle 4s alternate infinite;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+
+.lights11 {
+  -webkit-animation: twinkle 4s alternate infinite;
+          animation: twinkle 4s alternate infinite;
+  -webkit-animation-delay: 0.75s;
+          animation-delay: 0.75s;
+}
+
+.lights12 {
+  -webkit-animation: twinkle 4s alternate infinite;
+          animation: twinkle 4s alternate infinite;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+.lights13 {
+  -webkit-animation: twinkle 4s alternate infinite;
+          animation: twinkle 4s alternate infinite;
+  -webkit-animation-delay: 1.25s;
+          animation-delay: 1.25s;
+}
+
+.lights14 {
+  -webkit-animation: twinkle 4s alternate infinite;
+          animation: twinkle 4s alternate infinite;
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+}
+
+.lights15 {
+  -webkit-animation: twinkle 4s alternate infinite;
+          animation: twinkle 4s alternate infinite;
+  -webkit-animation-delay: 1.75s;
+          animation-delay: 1.75s;
+}
+
+.lights16 {
+  -webkit-animation: twinkle 4s alternate infinite;
+          animation: twinkle 4s alternate infinite;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+
+.lights17 {
+  -webkit-animation: twinkle 4s alternate infinite;
+          animation: twinkle 4s alternate infinite;
+  -webkit-animation-delay: 2.25s;
+          animation-delay: 2.25s;
+}
+
+.lights18 {
+  -webkit-animation: twinkle 4s alternate infinite;
+          animation: twinkle 4s alternate infinite;
+  -webkit-animation-delay: 2.5s;
+          animation-delay: 2.5s;
+}
+
+.lights19 {
+  -webkit-animation: twinkle 4s alternate infinite;
+          animation: twinkle 4s alternate infinite;
+  -webkit-animation-delay: 2.75s;
+          animation-delay: 2.75s;
+}
+
+.lights20 {
+  -webkit-animation: twinkle 4s alternate infinite;
+          animation: twinkle 4s alternate infinite;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+}
+
+.lights21 {
+  -webkit-animation: twinkle 4s alternate infinite;
+          animation: twinkle 4s alternate infinite;
+  -webkit-animation-delay: 2.1s;
+          animation-delay: 2.1s;
+}
+
+.lights22 {
+  -webkit-animation: twinkle 4s alternate infinite;
+          animation: twinkle 4s alternate infinite;
+  -webkit-animation-delay: 2.2s;
+          animation-delay: 2.2s;
+}
+
+.lights23 {
+  -webkit-animation: twinkle 4s alternate infinite;
+          animation: twinkle 4s alternate infinite;
+  -webkit-animation-delay: 2.3s;
+          animation-delay: 2.3s;
+}
+
+.lights24 {
+  -webkit-animation: twinkle 4s alternate infinite;
+          animation: twinkle 4s alternate infinite;
+  -webkit-animation-delay: 2.4s;
+          animation-delay: 2.4s;
+}
+
+.lights25 {
+  -webkit-animation: twinkle 4s alternate infinite;
+          animation: twinkle 4s alternate infinite;
+  -webkit-animation-delay: 2.5s;
+          animation-delay: 2.5s;
+}
+
+.lights26 {
+  -webkit-animation: twinkle 4s alternate infinite;
+          animation: twinkle 4s alternate infinite;
+  -webkit-animation-delay: 2.6s;
+          animation-delay: 2.6s;
+}
+
+.lights27 {
+  -webkit-animation: twinkle 4s alternate infinite;
+          animation: twinkle 4s alternate infinite;
+  -webkit-animation-delay: 2.7s;
+          animation-delay: 2.7s;
+}
+
+.lights28 {
+  -webkit-animation: twinkle 4s alternate infinite;
+          animation: twinkle 4s alternate infinite;
+  -webkit-animation-delay: 2.8s;
+          animation-delay: 2.8s;
+}
+
+.lights29 {
+  -webkit-animation: twinkle 4s alternate infinite;
+          animation: twinkle 4s alternate infinite;
+  -webkit-animation-delay: 2.9s;
+          animation-delay: 2.9s;
+}
+
+.lights30 {
+  -webkit-animation: twinkle 4s alternate infinite;
+          animation: twinkle 4s alternate infinite;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+}
+
+.lights31 {
+  -webkit-animation: twinkle 4s alternate infinite;
+          animation: twinkle 4s alternate infinite;
+  -webkit-animation-delay: 3.1s;
+          animation-delay: 3.1s;
+}
+
+.lights32 {
+  -webkit-animation: twinkle 4s alternate infinite;
+          animation: twinkle 4s alternate infinite;
+  -webkit-animation-delay: 3.2s;
+          animation-delay: 3.2s;
+}
+
+.lights33 {
+  -webkit-animation: twinkle 4s alternate infinite;
+          animation: twinkle 4s alternate infinite;
+  -webkit-animation-delay: 3.3s;
+          animation-delay: 3.3s;
+}
+
+.lights34 {
+  -webkit-animation: twinkle 4s alternate infinite;
+          animation: twinkle 4s alternate infinite;
+  -webkit-animation-delay: 3.4s;
+          animation-delay: 3.4s;
+}
+
+.lights35 {
+  -webkit-animation: twinkle 4s alternate infinite;
+          animation: twinkle 4s alternate infinite;
+  -webkit-animation-delay: 3.5s;
+          animation-delay: 3.5s;
+}
+
+.lights36 {
+  -webkit-animation: twinkle 4s alternate infinite;
+          animation: twinkle 4s alternate infinite;
+  -webkit-animation-delay: 3.6s;
+          animation-delay: 3.6s;
+}
+
+.lights37 {
+  -webkit-animation: twinkle 4s alternate infinite;
+          animation: twinkle 4s alternate infinite;
+  -webkit-animation-delay: 3.7s;
+          animation-delay: 3.7s;
+}
+
+.lights38 {
+  -webkit-animation: twinkle 4s alternate infinite;
+          animation: twinkle 4s alternate infinite;
+  -webkit-animation-delay: 3.8s;
+          animation-delay: 3.8s;
+}
+
+.lights39 {
+  -webkit-animation: twinkle 4s alternate infinite;
+          animation: twinkle 4s alternate infinite;
+  -webkit-animation-delay: 3.9s;
+          animation-delay: 3.9s;
+}
+
+.lights40 {
+  -webkit-animation: twinkle 4s alternate infinite;
+          animation: twinkle 4s alternate infinite;
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
+}
+
+.lights41 {
+  -webkit-animation: twinkle 4s alternate infinite;
+          animation: twinkle 4s alternate infinite;
+  -webkit-animation-delay: 4.1s;
+          animation-delay: 4.1s;
+}
+
+.lights42 {
+  -webkit-animation: twinkle 4s alternate infinite;
+          animation: twinkle 4s alternate infinite;
+  -webkit-animation-delay: 4.2s;
+          animation-delay: 4.2s;
+}
+
+.lights43 {
+  -webkit-animation: twinkle 4s alternate infinite;
+          animation: twinkle 4s alternate infinite;
+  -webkit-animation-delay: 4.3s;
+          animation-delay: 4.3s;
+}
+
+.lights44 {
+  -webkit-animation: twinkle 4s alternate infinite;
+          animation: twinkle 4s alternate infinite;
+  -webkit-animation-delay: 4.4s;
+          animation-delay: 4.4s;
+}
+
+.lights45 {
+  -webkit-animation: twinkle 4s alternate infinite;
+          animation: twinkle 4s alternate infinite;
+  -webkit-animation-delay: 4.5s;
+          animation-delay: 4.5s;
+}
+
+.lights46 {
+  -webkit-animation: twinkle 4s alternate infinite;
+          animation: twinkle 4s alternate infinite;
+  -webkit-animation-delay: 4.6s;
+          animation-delay: 4.6s;
+}
+
+@-webkit-keyframes twinkle {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes twinkle {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

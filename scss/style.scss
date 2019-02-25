@@ -1,0 +1,365 @@
+/* External styling from: https://codepen.io/manikoth/pen/NNNBYe.css
+ */
+
+body  {
+  background-color: #FFF;
+  
+  transition: background-color .2s;
+}
+
+/* Doodle Stage */
+
+#stage {
+  /* Fixed sizes, not responsive */
+  height: 500px;
+  width: 800px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  background-color: transparent;
+}
+
+.doodle {
+  display: inline-block;
+  position: relative;
+  width: 800px;
+  height: 432px;
+  margin-top: 20px;
+}
+
+.sill {
+  position: absolute;
+  width: 800px;
+  height: 150px;
+  background-color: #FFF;
+  
+  bottom: -80px;
+  left: 0;
+  
+  transition: .2s;
+}
+
+.sill_night {
+  background-color: #000111;
+}
+
+.night {
+  background-color: #223;
+  
+  transition: .2s;
+}
+
+img {
+  position: absolute;
+  top: 0;
+  left: 130px;
+  
+  height: 325px;
+}
+
+/* svgs */
+
+svg {
+  position: absolute;
+  bottom: 70px;
+}
+
+#G {
+  left: 0px;
+}
+
+#o  {
+  left: 205px;
+}
+
+#teapot {
+  left: 325px;
+}
+
+#cat  {
+  bottom: -43px;
+  left: 385px;
+}
+
+#l  {
+  bottom: 65px;
+  left: 612px;
+}
+
+#e  {
+  left: 645px;
+}
+
+#Steam  {
+  position: absolute;
+  top: 90px;
+  left: 317px;
+}
+
+#light  {
+  top: -50px;
+  right: 100px;
+  
+  transition: .5s;
+}
+
+#window_back  {
+  top: 0;
+  left: 130px;
+}
+
+.window_front {
+  top: 0;
+  left: 397px;
+  
+  transition: left 2s;
+}
+
+.window_open {
+  top: 0;
+  left: 170px;
+  
+  transition: left 2s;
+}
+
+#lights {
+  top: 44px;
+  left: 130px;
+  fill: #fff;
+  display: none;
+  
+  width: 538px;
+  
+  transition: all 2s;
+}
+
+.lights {
+  top: 44px;
+  left: 130px;
+  fill: #fff;
+  display: none;
+  
+  width: 538px;
+  
+  transition: all 2s;
+}
+
+#Lights > :not(marquee) {
+  transition: all 2s;
+}
+
+.lights_on {
+  top: 44px;
+  left: 130px;
+  fill: #fff;
+  display: block;
+  
+  width: 538px;
+  
+  transition: all 2s;
+}
+
+.city_off {
+  display: none;
+  
+  transition: all 2s;
+}
+
+/* Colors */
+
+.blue_highlight {
+  fill:#629cf9;
+}
+
+.blue_dark  {
+  fill:#3773bc;
+}
+
+.blue_v_dark  {
+  fill:#26619b;
+}
+
+.blue_reg {
+  fill:#5287ec;
+}
+
+.blue_tail {
+  fill:#629cf9;
+}
+
+.red_highlight  {
+  fill:#db7286;
+}
+
+.red_dark {
+  fill:#af3a31;
+}
+
+.red_v_dark {
+  fill:#a02d27;
+}
+
+.red_reg  {
+  fill:#d8503f;
+}
+
+.yellow_highlight  {
+  fill:#e8cb52;
+}
+
+.yellow_v_dark {
+  fill:#cc9132;
+}
+
+.yellow_dark {
+  fill:#d69a3a;
+}
+
+.yellow_reg  {
+  fill:#f2bd42;
+}
+
+.green_highlight  {
+  fill:#70ba93;
+}
+
+.green_dark {
+  fill:#419343;
+}
+
+.green_v_dark {
+  fill:#378237;
+}
+
+.green_reg  {
+  fill:#58a55c;
+}
+
+.window_dark  {
+  fill:#f4ece9;
+}
+
+.window_light {
+  fill:#f9f1ef;
+}
+
+.window_dark_night  {
+  fill: #47475e;
+}
+
+.window_light_night  {
+  fill: #61617c;
+}
+
+.window_glass {
+  opacity: 0.2;
+  fill: #fffbee;
+}
+
+.window_glass_night {
+  fill: #3d3d59;
+}
+
+.steam, .steam2	{
+	fill:none;
+	stroke:#ddd;
+	opacity: 0.3;
+	stroke-linecap:round;
+	stroke-miterlimit:10;
+	stroke-width:7px;
+}
+
+.steam2	{
+	stroke-width:5px;
+}
+
+.shadow {
+  fill:#000111;
+}
+
+.none {
+  fill: #0000;
+  stroke: none;
+}
+
+svg path  {
+  transition: fill .2s;
+}
+
+/* Steam animation */
+
+.block-top, .block-bottom	{
+	position: absolute;
+	background-color: #FFF;
+	
+	width: 30px;
+	height: 190px;
+	
+	box-shadow: 0 0 30px 40px #FFFF;
+	
+	top: 40px;
+	left: 35px;
+  
+  transition: .2s;
+}
+
+.block-bottom	{
+	top: 330px;
+}
+
+.block-night  {
+  background-color: #223;
+  box-shadow: 0 0 30px 40px #223F;
+  
+  transition: .2s;
+}
+
+/* Steam anim */
+.steam, .steam2	{
+	stroke-dasharray: 100;
+  stroke-dashoffset: 1000;
+	
+	animation: steamAnim 12s infinite linear;
+}
+
+@keyframes steamAnim {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Teapot animation */
+
+.bounce	{
+	animation: bounce 1s;
+}
+
+/* Lights twinkle animation */
+
+@for $i from 1 through 46 {
+  
+  $animationDelay: ($i * .1);
+  @if($i <= 20)
+  {
+    $animationDelay: ($i * .25 - 2);
+  }
+  $animationDuration: (4);
+  .lights#{$i} {
+    animation: twinkle #{$animationDuration}s alternate infinite;
+    animation-delay: $animationDelay+s;
+  }
+}
+
+@keyframes twinkle {
+  0% {
+    opacity: 1;
+  }
+  
+  50% {
+    opacity: 0;
+  }
+  
+  100% {
+    opacity: 1;
+  }
+}
