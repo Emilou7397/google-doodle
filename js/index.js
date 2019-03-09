@@ -19,7 +19,7 @@ var bounce_shading = function() {
 
 // Time function
 
-var time = function time() {
+var time = function() {
   $("#light_pull").css("top", "5px");
   setTimeout(function() {
     $("#light_pull").css("top", "-25px");
@@ -33,7 +33,15 @@ var time = function time() {
   $('.top').toggleClass('night_background');
 }
 
+// Window open function
+
+var windowToggle = function()  {
+  $('.window_front').toggleClass('window_open');
+}
+
 $(".teapot").mouseenter(bounce);
 $(".teapot_shading").mouseenter(bounce_shading);
 
 $("#light_pull").click(time);
+
+$(".window-clickable").click(windowToggle);
