@@ -1,235 +1,119 @@
 /* External styling from: https://codepen.io/manikoth/pen/NNNBYe.css
  */
-body {
-  background-color: #FFF;
-  transition: background-color .2s;
+
+ body  {
+  transition: 0.5s;
+}
+
+.window_light, .window_dark, .window_glass, .window_light_night, .window_dark_night, .window_glass_night  {
+  transition: 0.5s;
 }
 
 /* Doodle Stage */
+
 #stage {
-  /* Fixed sizes, not responsive */
+  /* Fixed Sizes   */
   height: 500px;
   width: 800px;
+
   position: relative;
-  overflow: hidden;
-  text-align: center;
-  background-color: transparent;
 }
 
-.doodle {
-  display: inline-block;
-  position: relative;
-  width: 800px;
-  height: 432px;
-  margin-top: 20px;
-}
+/* Positioning */
 
-.sill {
+svg, img  {
   position: absolute;
-  width: 800px;
-  height: 150px;
-  background-color: #FFF;
-  bottom: -80px;
-  left: 0;
-  transition: .2s;
-}
-
-.sill_night {
-  background-color: #000111;
-}
-
-.night {
-  background-color: #223;
-  transition: .2s;
+  
+  transition: 0.5s;
 }
 
 img {
-  position: absolute;
-  top: 0;
-  left: 130px;
-  height: 325px;
-}
-
-/* svgs */
-svg {
-  position: absolute;
-  bottom: 70px;
-}
-
-#G {
-  left: 0px;
-}
-
-#o {
-  left: 205px;
-}
-
-#teapot {
-  left: 325px;
-}
-
-#cat {
-  bottom: -43px;
-  left: 385px;
-}
-
-#l {
-  bottom: 65px;
-  left: 612px;
-}
-
-#e {
-  left: 645px;
-}
-
-#Steam {
-  position: absolute;
-  top: 90px;
-  left: 317px;
-}
-
-#light {
-  top: -50px;
-  right: 100px;
-  transition: .5s;
-}
-
-#window_back {
-  top: 0;
-  left: 130px;
-}
-
-.window_front {
-  top: 0;
-  left: 397px;
-  transition: left 2s;
-}
-
-.window_open {
-  top: 0;
-  left: 170px;
-  transition: left 2s;
-}
-
-#lights {
-  top: 44px;
-  left: 130px;
-  fill: #fff;
-  display: none;
-  width: 538px;
-  transition: all 2s;
+  top: 30px;
+  left: 135px;
+  
+  width: 539px;
 }
 
 .lights {
-  top: 44px;
-  left: 130px;
-  fill: #fff;
-  display: none;
-  width: 538px;
-  transition: all 2s;
+  top: 74px;
+  left: 135px;
 }
 
-#Lights > :not(marquee) {
-  transition: all 2s;
+.shadows  {
+  bottom: 95px;
+  left: -5px;
 }
 
-.lights_on {
-  top: 44px;
-  left: 130px;
-  fill: #fff;
-  display: block;
-  width: 538px;
-  transition: all 2s;
+.window_back  {
+  top: 30px;
+  left: 135px;
 }
 
-.city_off {
-  display: none;
-  transition: all 2s;
+.window_front {
+  top: 30px;
+  left: 400px;
+}
+
+.steam  {
+  top: 115px;
+  left: 315px;
+}
+
+#light_pull {
+  top: -20px;
+  right: 90px;
+  padding: 10px;
+  
+  transition: 0.5s;
+}
+
+.base_colors  {
+  bottom: 130px;
+  left: 50px;
+}
+
+.teapot {
+  bottom: 95px;
+  left: 325px;
+}
+
+.cat  {
+  bottom: -10px;
+  left: 390px;
 }
 
 /* Colors */
-.blue_highlight {
-  fill: #629cf9;
+
+.night  {
+  opacity: 0;
+  
+  transition: 0.5s;
 }
 
-.blue_dark {
-  fill: #3773bc;
+.visible  {
+  opacity: 100;
+  
+  transition: 0.5s;
 }
 
-.blue_v_dark {
-  fill: #26619b;
+.night_background {
+  background-color: #223;
 }
 
-.blue_reg {
-  fill: #5287ec;
+.lights {
+  fill: white;
 }
 
-.blue_tail {
-  fill: #629cf9;
-}
-
-.red_highlight {
-  fill: #db7286;
-}
-
-.red_dark {
-  fill: #af3a31;
-}
-
-.red_v_dark {
-  fill: #a02d27;
-}
-
-.red_reg {
-  fill: #d8503f;
-}
-
-.yellow_highlight {
-  fill: #e8cb52;
-}
-
-.yellow_v_dark {
-  fill: #cc9132;
-}
-
-.yellow_dark {
-  fill: #d69a3a;
-}
-
-.yellow_reg {
-  fill: #f2bd42;
-}
-
-.green_highlight {
-  fill: #70ba93;
-}
-
-.green_dark {
-  fill: #419343;
-}
-
-.green_v_dark {
-  fill: #378237;
-}
-
-.green_reg {
-  fill: #58a55c;
-}
-
-.window_dark {
-  fill: #f4ece9;
+.shadows {
+  fill: #000111;
 }
 
 .window_light {
-  fill: #f9f1ef;
+  fill:#f9f1ef;
 }
 
-.window_dark_night {
-  fill: #47475e;
-}
-
-.window_light_night {
-  fill: #61617c;
+.window_dark  {
+  fill:#f4ece9;
 }
 
 .window_glass {
@@ -237,60 +121,137 @@ svg {
   fill: #fffbee;
 }
 
+.window_light_night  {
+  fill: #61617c;
+}
+
+.window_dark_night  {
+  fill: #47475e;
+}
+
 .window_glass_night {
   fill: #3d3d59;
 }
 
-.steam, .steam2 {
-  fill: none;
-  stroke: #ddd;
-  opacity: 0.3;
-  stroke-linecap: round;
-  stroke-miterlimit: 10;
-  stroke-width: 7px;
+.steam_light, .steam_dark {
+  fill:none;
+	stroke:#ddd;
+	opacity: 0.3;
+	stroke-linecap:round;
+	stroke-miterlimit:10;
+	stroke-width:7px;
 }
 
-.steam2 {
-  stroke-width: 5px;
+.steam_dark {
+  stroke-width:5px;
 }
 
-.shadow {
-  fill: #000111;
+.blue {
+  fill: #5287ec;
 }
 
-.none {
-  fill: #0000;
-  stroke: none;
+.blue_dark {
+  fill: #3773bc;
 }
 
-svg path {
-  transition: fill .2s;
+.blue_n1 {
+  fill: #26619b;
 }
 
-/* Steam animation */
-.block-top, .block-bottom {
-  position: absolute;
-  background-color: #FFF;
-  width: 30px;
-  height: 190px;
-  box-shadow: 0 0 30px 40px #FFFF;
-  top: 40px;
-  left: 35px;
-  transition: .2s;
+.blue_n2 {
+  fill: #629cf9;
 }
 
-.block-bottom {
-  top: 330px;
+.blue_shad1 {
+  fill: #629cf9;
 }
 
-.block-night {
-  background-color: #223;
-  box-shadow: 0 0 30px 40px #223F;
-  transition: .2s;
+.blue_shad2 {
+  fill: #3773bc;
+}
+
+.blue_shad3 {
+  fill: #26619b;
+}
+
+.red {
+  fill: #d8503f;
+}
+
+.red_shad1 {
+  fill: #db7286;
+}
+
+.red_shad2 {
+  fill: #a02d27;
+}
+
+.red_shad3 {
+  fill: #af3a31;
+}
+
+.green {
+  fill: #58a55c;
+}
+
+.green_shad1 {
+  fill: #70ba93;
+}
+
+.green_shad2 {
+  fill: #419343;
+}
+
+.green_shad3 {
+  fill: #378237;
+}
+
+.yellow {
+  fill: #f2bd42;
+}
+
+.yellow_dark {
+  fill: #e5ae41;
+}
+
+.yellow_n1 {
+  fill: #e8cb52;
+}
+
+.yellow_n2 {
+  fill: #edd354;
+}
+
+.yellow_n3 {
+  fill: #d69a3a;
+}
+
+.yellow_n4 {
+  fill: #cc9132;
+}
+
+.yellow_n5 {
+  fill: #dda03e;
+}
+
+/* Animations */
+
+/* Light pull */
+.light_pull_anim  {
+  animation: light_pull 1s;
+}
+
+@keyframes light_pull {
+  50% {
+    top: 10px;
+  }
+  100%  {
+    top: -20px;
+  }
 }
 
 /* Steam anim */
-.steam, .steam2 {
+.steam_light, .steam_dark {
   stroke-dasharray: 100;
   stroke-dashoffset: 1000;
   -webkit-animation: steamAnim 12s infinite linear;
@@ -638,18 +599,6 @@ svg path {
 }
 
 @-webkit-keyframes twinkle {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes twinkle {
   0% {
     opacity: 1;
   }
