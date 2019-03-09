@@ -1,11 +1,23 @@
 /* External styling from: https://codepen.io/manikoth/pen/NNNBYe.css
  */
 
- body  {
+body  {
   transition: 0.5s;
 }
 
 .window_light, .window_dark, .window_glass, .window_light_night, .window_dark_night, .window_glass_night  {
+  transition: 0.5s;
+}
+
+.top  {
+  background-color: white;
+  
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 40px;
+  
   transition: 0.5s;
 }
 
@@ -98,6 +110,8 @@ img {
 
 .night_background {
   background-color: #223;
+  
+  transition: 0.5s;
 }
 
 .lights {
@@ -238,7 +252,17 @@ img {
 
 /* Light pull */
 .light_pull_anim  {
-  animation: light_pull 1s;
+  -webkit-animation: light_pull 1s;
+          animation: light_pull 1s;
+}
+
+@-webkit-keyframes light_pull {
+  50% {
+    top: 10px;
+  }
+  100%  {
+    top: -20px;
+  }
 }
 
 @keyframes light_pull {

@@ -30,6 +30,7 @@ var time = function time() {
   $('.window_dark').toggleClass('window_dark_night');
   $('.window_glass').toggleClass('window_glass_night');
   $('body').toggleClass('night_background');
+  $('.top').toggleClass('night_background');
 }
 
 $(".teapot").mouseenter(bounce);
