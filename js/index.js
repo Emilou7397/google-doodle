@@ -20,9 +20,9 @@ var bounce_shading = function() {
 // Time function
 
 var time = function() {
-  $("#light_pull").css("top", "5px");
+  $("#light_pull").css("top", "-10px");
   setTimeout(function() {
-    $("#light_pull").css("top", "-25px");
+    $("#light_pull").css("top", "-40px");
   }, 500);
   
   $('.night').toggleClass('visible');

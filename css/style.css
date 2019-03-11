@@ -13,8 +13,9 @@ body  {
 
 #stage {
   /* Fixed Sizes   */
-  height: 500px;
-  width: 800px;
+  height: 550px;
+  width: 820px;
+  overflow: hidden;
 
   position: relative;
 }
@@ -29,79 +30,104 @@ svg, img  {
 
 img {
   top: 30px;
-  left: 135px;
+  left: 145px;
   
   width: 539px;
 }
 
-.top  {
-  background-color: white;
-  
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 40px;
-  
-  transition: 0.5s;
-}
+
 
 .window-clickable {
   position: absolute;
   top: 0;
-  left: 135px;
+  left: 145px;
   width: 550px;
   height: 355px;
 }
 
 .lights {
   top: 74px;
-  left: 135px;
+  left: 145px;
 }
 
 .shadows  {
-  bottom: 95px;
-  left: -5px;
+  bottom: 145px;
+  left: 5px;
 }
 
 .window_back  {
   top: 30px;
-  left: 135px;
+  left: 145px;
 }
 
 .window_front {
   top: 30px;
-  left: 400px;
+  left: 410px;
   
   transition: 2s;
 }
 
 .steam  {
   top: 115px;
-  left: 315px;
+  left: 325px;
 }
 
 #light_pull {
-  top: -20px;
-  right: 90px;
+  top: -40px;
+  right: 100px;
   padding: 10px;
   
   transition: 0.5s;
 }
 
 .base_colors  {
-  bottom: 130px;
-  left: 50px;
+  bottom: 180px;
+  left: 60px;
 }
 
 .teapot {
-  bottom: 95px;
-  left: 325px;
+  bottom: 145px;
+  left: 335px;
 }
 
 .cat  {
-  bottom: -10px;
-  left: 390px;
+  position: absolute;
+  bottom: -50px;
+  left: 350px;
+  
+	margin: 50px;
+  width: 220px;
+  height: 475px;
+  background: url('https://raw.githubusercontent.com/Emilou7397/google-doodle/master/img/cat-spritesheet.png') left center;
+  background-size: 2861px;
+	
+	-webkit-animation: play 1s steps(13) infinite;
+	
+	        animation: play 1s steps(13) infinite;
+}
+
+.cat-night  {
+  position: absolute;
+  bottom: -50px;
+  left: 350px;
+  
+	margin: 50px;
+  width: 220px;
+  height: 475px;
+  background: url('https://raw.githubusercontent.com/Emilou7397/google-doodle/master/img/cat-night-spritesheet.png') left center;
+  background-size: 2861px;
+	
+	-webkit-animation: play 1s steps(13) infinite;
+	
+	        animation: play 1s steps(13) infinite;
+}
+
+@-webkit-keyframes play {
+	100% { background-position: -2861px; }
+}
+
+@keyframes play {
+	100% { background-position: -2861px; }
 }
 
 /* Colors */
