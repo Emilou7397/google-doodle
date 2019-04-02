@@ -15,7 +15,6 @@ body  {
   /* Fixed Sizes   */
   height: 550px;
   width: 820px;
-  overflow: hidden;
 
   position: relative;
 }
@@ -32,10 +31,80 @@ img {
   top: 30px;
   left: 145px;
   
+  z-index: -1;
+  
   width: 539px;
 }
 
+.ear  {
+  position: absolute;
+  z-index: 1;
+  top: 76px;
+  left: 458px;
+}
 
+.top_wall {
+  background-color: white;
+  width: 100vw;
+  height: 100px;
+  position: absolute;
+  bottom: 520px;
+  right: 0;
+  
+  z-index: 1;
+  
+  transition: 0.5s;
+}
+
+.right_wall {
+  background-color: white;
+  width: 140px;
+  height: 100px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  
+  z-index: 0;
+  
+  transition: 0.5s;
+}
+
+.x	{
+	width: 30px;
+	height: 30px;
+	
+	position: absolute;
+	top: 0px;
+	right: 140px;
+}
+
+#y	{
+	position: relative;
+	top: 5px;
+	left: 5px;
+	
+	width: 20px;
+	height: 20px;
+}
+
+.leaf	{
+	width: 40px;
+	height: 40px;
+	-webkit-transform: rotate(-180deg);
+	        transform: rotate(-180deg);
+  
+  z-index: 0;
+}
+
+.leaf_spin  {
+  -webkit-animation: spin 7s linear infinite;
+          animation: spin 7s linear infinite;
+}
+
+.spin_paused  {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
 
 .window-clickable {
   position: absolute;
@@ -43,6 +112,7 @@ img {
   left: 145px;
   width: 550px;
   height: 355px;
+  z-index: 2;
 }
 
 .lights {
@@ -58,11 +128,15 @@ img {
 .window_back  {
   top: 30px;
   left: 145px;
+  
+  z-index: 1;
 }
 
 .window_front {
   top: 30px;
   left: 410px;
+  
+  z-index: 1;
   
   transition: 2s;
 }
@@ -77,17 +151,23 @@ img {
   right: 100px;
   padding: 10px;
   
+  z-index: 0;
+  
   transition: 0.5s;
 }
 
 .base_colors  {
   bottom: 180px;
   left: 60px;
+  
+  z-index: 1;
 }
 
 .teapot {
   bottom: 145px;
   left: 335px;
+  
+  z-index: 2;
 }
 
 .cat  {
@@ -98,8 +178,10 @@ img {
 	margin: 50px;
   width: 220px;
   height: 475px;
-  background: url('../img/cat-spritesheet.png') left center;
+  background: url('https://raw.githubusercontent.com/Emilou7397/google-doodle/master/img/cat-spritesheet.png') left center;
   background-size: 2861px;
+  
+  z-index: 2;
 	
 	-webkit-animation: play 1s steps(13) infinite;
 	
@@ -114,23 +196,43 @@ img {
 	margin: 50px;
   width: 220px;
   height: 475px;
-  background: url('../img/cat-night-spritesheet.png') left center;
+  background: url('https://raw.githubusercontent.com/Emilou7397/google-doodle/master/img/cat-night-spritesheet.png') left center;
   background-size: 2861px;
+  
+  z-index: 2;
 	
 	-webkit-animation: play 1s steps(13) infinite;
 	
 	        animation: play 1s steps(13) infinite;
 }
 
-@-webkit-keyframes play {
-	100% { background-position: -2861px; }
-}
-
-@keyframes play {
-	100% { background-position: -2861px; }
-}
-
 /* Colors */
+
+.leaf_1 {
+  fill: #fff;
+  
+  transition: 0.5s;
+}
+
+.leaf_2, .leaf_3 {
+  fill: none;
+  stroke: #2F702F;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2px;
+  
+  transition: 0.5s;
+}
+
+.leaf_3 {
+  stroke-width: 4px;
+  
+  transition: 0.5s;
+}
+
+.leaf_lines_night {
+  stroke: #225122;
+}
 
 .night  {
   opacity: 0;
@@ -291,6 +393,386 @@ img {
 }
 
 /* Animations */
+
+/* Cat Sprite Anim */
+
+@-webkit-keyframes play {
+	100% { background-position: -2861px; }
+}
+
+@keyframes play {
+	100% { background-position: -2861px; }
+}
+
+/* Leaf animations */
+
+@-webkit-keyframes spin	{
+	50%	{
+		-webkit-transform: rotate(270deg);
+		        transform: rotate(270deg);
+	}
+}
+
+@keyframes spin	{
+	50%	{
+		-webkit-transform: rotate(270deg);
+		        transform: rotate(270deg);
+	}
+}
+
+@-webkit-keyframes movex_1	{
+  0%  {
+    right: 140px;
+  }
+	100%	{
+		right: 240px;
+	}
+}
+
+@keyframes movex_1	{
+  0%  {
+    right: 140px;
+  }
+	100%	{
+		right: 240px;
+	}
+}
+
+@-webkit-keyframes movex_2	{
+	0%	{
+		right: 240px;
+	}
+	100%	{
+		right: 290px;
+	}
+}
+
+@keyframes movex_2	{
+	0%	{
+		right: 240px;
+	}
+	100%	{
+		right: 290px;
+	}
+}
+
+@-webkit-keyframes movex_3	{
+	0%	{
+		right: 290px;
+	}
+	100%	{
+		right: 260px;
+	}
+}
+
+@keyframes movex_3	{
+	0%	{
+		right: 290px;
+	}
+	100%	{
+		right: 260px;
+	}
+}
+
+@-webkit-keyframes movex_4	{
+	0%	{
+		right: 260px;
+	}
+	100%	{
+		right: 230px;
+	}
+}
+
+@keyframes movex_4	{
+	0%	{
+		right: 260px;
+	}
+	100%	{
+		right: 230px;
+	}
+}
+
+@-webkit-keyframes movex_5	{
+	0%	{
+		right: 230px;
+	}
+	100%	{
+		right: 350px;
+	}
+}
+
+@keyframes movex_5	{
+	0%	{
+		right: 230px;
+	}
+	100%	{
+		right: 350px;
+	}
+}
+
+@-webkit-keyframes movex_6	{
+	0%	{
+		right: 350px;
+	}
+	100%	{
+		right: 350px;
+	}
+}
+
+@keyframes movex_6	{
+	0%	{
+		right: 350px;
+	}
+	100%	{
+		right: 350px;
+	}
+}
+
+@-webkit-keyframes movex_7	{
+	0%	{
+		right: 350px;
+	}
+	100%	{
+		right: 500px;
+	}
+}
+
+@keyframes movex_7	{
+	0%	{
+		right: 350px;
+	}
+	100%	{
+		right: 500px;
+	}
+}
+
+@-webkit-keyframes movex_8	{
+	0%	{
+		right: 500px;
+	}
+	100%	{
+		right: 610px;
+	}
+}
+
+@keyframes movex_8	{
+	0%	{
+		right: 500px;
+	}
+	100%	{
+		right: 610px;
+	}
+}
+
+@-webkit-keyframes movex_9	{
+	0%	{
+		right: 610px;
+	}
+	100%	{
+		right: 1000px;
+	}
+}
+
+@keyframes movex_9	{
+	0%	{
+		right: 610px;
+	}
+	100%	{
+		right: 1000px;
+	}
+}
+
+@-webkit-keyframes movex_10	{
+	0%	{
+		right: 1000px;
+	}
+	100%	{
+		right: calc(70vw + 200px);
+	}
+}
+
+@keyframes movex_10	{
+	0%	{
+		right: 1000px;
+	}
+	100%	{
+		right: calc(70vw + 200px);
+	}
+}
+
+@-webkit-keyframes movey_1	{
+	100%	{
+		top: 50px;
+	}
+}
+
+@keyframes movey_1	{
+	100%	{
+		top: 50px;
+	}
+}
+
+@-webkit-keyframes movey_2	{
+	0%	{
+		top: 50px;
+	}
+	100%	{
+		top: 20px;
+	}
+}
+
+@keyframes movey_2	{
+	0%	{
+		top: 50px;
+	}
+	100%	{
+		top: 20px;
+	}
+}
+
+@-webkit-keyframes movey_3	{
+	0%	{
+		top: 20px;
+	}
+	100%	{
+		top: -20px;
+	}
+}
+
+@keyframes movey_3	{
+	0%	{
+		top: 20px;
+	}
+	100%	{
+		top: -20px;
+	}
+}
+
+@-webkit-keyframes movey_4	{
+	0%	{
+		top: -20px;
+	}
+	100%	{
+		top: 20px;
+	}
+}
+
+@keyframes movey_4	{
+	0%	{
+		top: -20px;
+	}
+	100%	{
+		top: 20px;
+	}
+}
+
+@-webkit-keyframes movey_5	{
+	0%	{
+		top: 20px;
+	}
+	100%	{
+		top: 66px;
+	}
+}
+
+@keyframes movey_5	{
+	0%	{
+		top: 20px;
+	}
+	100%	{
+		top: 66px;
+	}
+}
+
+@-webkit-keyframes movey_6	{
+	0%	{
+		top: 66px;
+	}
+	100%	{
+		top: 66px;
+	}
+}
+
+@keyframes movey_6	{
+	0%	{
+		top: 66px;
+	}
+	100%	{
+		top: 66px;
+	}
+}
+
+@-webkit-keyframes movey_7	{
+	0%	{
+		top: 66px;
+	}
+	100%	{
+		top: 50px;
+	}
+}
+
+@keyframes movey_7	{
+	0%	{
+		top: 66px;
+	}
+	100%	{
+		top: 50px;
+	}
+}
+
+@-webkit-keyframes movey_8	{
+	0%	{
+		top: 50px;
+	}
+	100%	{
+		top: 150px;
+	}
+}
+
+@keyframes movey_8	{
+	0%	{
+		top: 50px;
+	}
+	100%	{
+		top: 150px;
+	}
+}
+
+@-webkit-keyframes movey_9	{
+	0%	{
+		top: 150px;
+	}
+	100%	{
+		top: 300px;
+	}
+}
+
+@keyframes movey_9	{
+	0%	{
+		top: 150px;
+	}
+	100%	{
+		top: 300px;
+	}
+}
+
+@-webkit-keyframes movey_10	{
+	0%	{
+		top: 300px;
+	}
+	100%	{
+		top: 0px;
+	}
+}
+
+@keyframes movey_10	{
+	0%	{
+		top: 300px;
+	}
+	100%	{
+		top: 0px;
+	}
+}
 
 /* Light pull */
 .light_pull_anim  {
