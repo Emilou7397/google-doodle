@@ -114,7 +114,7 @@ function recursion(delay, animDur, i, timeFunctionX, timeFunctionY)	{
 	}
   else if (i == 10)	{
     var windowWidth = $( window ).width();
-		animDur = windowWidth * 0.002;
+		animDur = windowWidth * 0.001;
 		timeFunctionX = 'ease-out';
 		timeFunctionY = 'ease-in';
 	}
