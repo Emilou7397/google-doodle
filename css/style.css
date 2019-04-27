@@ -78,6 +78,11 @@ img {
 	right: 140px;
 }
 
+.x.moving {
+  -webkit-animation: movex_1 1s ease-in forwards, movex_2 0.5s ease-out 1s forwards, movex_3 0.5s ease-in 1.5s forwards, movex_4 0.5s ease-out 2s forwards, movex_5 1s ease-in 2.5s forwards, movex_6 1s ease-in 3.5s forwards, movex_7 1s ease-in 4.5s forwards, movex_8 1s ease-out 5.5s forwards, movex_9 2s ease-in 6.5s forwards, movex_10 1.5s ease-out 8.5s forwards;
+          animation: movex_1 1s ease-in forwards, movex_2 0.5s ease-out 1s forwards, movex_3 0.5s ease-in 1.5s forwards, movex_4 0.5s ease-out 2s forwards, movex_5 1s ease-in 2.5s forwards, movex_6 1s ease-in 3.5s forwards, movex_7 1s ease-in 4.5s forwards, movex_8 1s ease-out 5.5s forwards, movex_9 2s ease-in 6.5s forwards, movex_10 1.5s ease-out 8.5s forwards;
+}
+
 #y	{
 	position: relative;
 	top: 5px;
@@ -85,6 +90,11 @@ img {
 	
 	width: 20px;
 	height: 20px;
+}
+
+#y.moving {
+  -webkit-animation: movey_1 1s ease-out forwards, movey_2 0.5s ease-in 1s forwards, movey_3 0.5s ease-out 1.5s forwards, movey_4 0.5s ease-in 2s forwards, movey_5 1s ease-out 2.5s forwards, movey_6 1s ease-out 3.5s forwards, movey_7 1s ease-out 4.5s forwards, movey_8 1s ease-in 5.5s forwards, movey_9 2s ease-out 6.5s forwards, movey_10 1.5s ease-in 8.5s forwards;
+          animation: movey_1 1s ease-out forwards, movey_2 0.5s ease-in 1s forwards, movey_3 0.5s ease-out 1.5s forwards, movey_4 0.5s ease-in 2s forwards, movey_5 1s ease-out 2.5s forwards, movey_6 1s ease-out 3.5s forwards, movey_7 1s ease-out 4.5s forwards, movey_8 1s ease-in 5.5s forwards, movey_9 2s ease-out 6.5s forwards, movey_10 1.5s ease-in 8.5s forwards;
 }
 
 .leaf	{
@@ -587,7 +597,7 @@ img {
 		right: 1000px;
 	}
 	100%	{
-		right: calc(70vw + 200px);
+		right: 100vw;
 	}
 }
 
@@ -596,7 +606,7 @@ img {
 		right: 1000px;
 	}
 	100%	{
-		right: calc(70vw + 200px);
+		right: 100vw;
 	}
 }
 
@@ -761,7 +771,7 @@ img {
 		top: 300px;
 	}
 	100%	{
-		top: 0px;
+		top: -50px;
 	}
 }
 
@@ -770,7 +780,7 @@ img {
 		top: 300px;
 	}
 	100%	{
-		top: 0px;
+		top: -50px;
 	}
 }
 

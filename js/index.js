@@ -54,87 +54,34 @@ var windowToggle = function windowToggle()  {
 // Leaf anim
 
 function anim()	{
-	var delay = 0;
-	var animDur = 1;
-	var i = 1;
-	var timeFunctionX = 'ease-in';
-	var timeFunctionY = 'ease-out';
   
+  $('#y').toggleClass('moving');
+  $('.x').toggleClass('moving');
   $('.leaf').toggleClass('leaf_spin');
   $('.leaf').toggleClass('is_moving');
-	
-	recursion(delay, animDur, i, timeFunctionX, timeFunctionY);
-}
-
-function recursion(delay, animDur, i, timeFunctionX, timeFunctionY)	{
+  
+  setTimeout(	function()	{
+    $('.leaf').css('z-index', '1');
+	}, 1000);
+  
+  setTimeout(	function()	{
+    $('.leaf').toggleClass('spin_paused');
+	}, 3500);
+  
+  setTimeout(	function()	{
+    $('.leaf').toggleClass('spin_paused');
+	}, 4500);
 	
 	setTimeout(	function()	{
-		
-	if (i == 1)	{
-		
-	}
-	else if (i == 2)	{
-		animDur = 0.5;
-		timeFunctionX = 'ease-out';
-		timeFunctionY = 'ease-in';
-    $('.leaf').css('z-index', '1');
-	}
-	else if (i == 3)	{
-		animDur = 0.5;
-		timeFunctionX = 'ease-in';
-		timeFunctionY = 'ease-out';
-	}
-	else if (i == 4)	{
-		animDur = 0.5;
-		timeFunctionX = 'ease-out';
-		timeFunctionY = 'ease-in';
-	}
-	else if (i == 5)	{
-		animDur = 1;
-		timeFunctionX = 'ease-in';
-		timeFunctionY = 'ease-out';
-	}
-	else if (i == 6)	{
-		animDur = 1;
-    $('.leaf').toggleClass('spin_paused');
-	}
-  else if (i == 7)	{
-		animDur = 1;
-    $('.leaf').toggleClass('spin_paused');
-	}
-	else if (i == 8)	{
-		animDur = 1;
-		timeFunctionX = 'ease-out';
-		timeFunctionY = 'ease-in';
-	}
-	else if (i == 9)	{
-		animDur = 2;
-		timeFunctionX = 'ease-in';
-		timeFunctionY = 'ease-out';
-	}
-  else if (i == 10)	{
-    var windowWidth = $( window ).width();
-		animDur = windowWidth * 0.001;
-		timeFunctionX = 'ease-out';
-		timeFunctionY = 'ease-in';
-	}
-  else  {
     $('.leaf').toggleClass('leaf_spin');
     $('.leaf').css('z-index', '-1');
     $('.leaf').toggleClass('is_moving');
-    return;
-  }
-		
-		$('.x').css('animation', 'movex_' + i + ' ' + animDur + 's ' + timeFunctionX + ' forwards');
-		$('#y').css('animation', 'movey_' + i + ' ' + animDur + 's ' + timeFunctionY + ' forwards');
-		
-		delay = animDur * 1000;
-		i++;
-		
-		if (i < 12)	{
-			recursion(delay, animDur, i, timeFunctionX, timeFunctionY);
-		}
-	}, delay);
+	}, 10000);
+  
+  setTimeout(	function()	{
+    $('#y').toggleClass('moving');
+    $('.x').toggleClass('moving');
+	}, 11000);
 }
 
 // Search function
